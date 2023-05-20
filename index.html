@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h4>CS-2233</h4>
+    <h4>Kazhibekov Madi</h4>
+    <h4>Web Technologies</h4>
+    <script>
+    function Task1() {
+        let name = prompt("What is your name ?")
+        console.log(name);
+
+        let uppperLetter = name.slice(0, 1)
+        let otherPart = name.slice(1);
+
+        uppperLetter = uppperLetter.toUpperCase();
+        otherPart = otherPart.toLowerCase();
+
+        name = uppperLetter.concat(otherPart);
+        alert(`Hello ${name}`);
+    }
+
+    function Task4() {
+        let x = 32850;
+        let y = 4693;
+        let z = 1080;
+
+        let userX, userY, userZ;
+        let age = prompt("Enter your Age: ")
+
+        userX = age * 365;
+        userY = age * 52;
+        userZ = age * 12
+
+        alert(`You have ${x - userX} days, ${y - userY} weeks, ${z - userZ} months left`)
+    }
+
+    function Task5() {
+        let userWeight = prompt("Enter your weight: ")
+        let userHeight = prompt("Enter your height: ")
+        userHeight = userHeight * userHeight;
+        let bmi = (userWeight / ((userHeight) / 10000)).toFixed(2);
+
+        if (bmi < 18.5) alert(`Your BMI is ${bmi}, which means you are underweight.`)
+        else if (bmi >= 18.5 && bmi <= 24.9) alert(`"Your BMI is ${bmi}, which means you have a normal weight.`)
+        else if (bmi > 24.9) alert(`Your BMI is ${bmi}, which means you might be overweight.`)
+        else alert(`Your BMI is ${bmi}`)
+    }
+
+    function Task6() {
+        let year = prompt("Enter year: ")
+        let count = 0;
+        if(year % 4 === 0) count++;
+        if(year % 100 === 0) count++;
+        if(year % 400 === 0) count++;
+
+        if(count > 1)alert('Leap Year')
+        else alert('Not Leap Year')
+    }
+
+    function Task7() {
+        let names = [];
+        let name;
+        alert("Enter 'stop' if you don't want add new names.")
+        while(true){
+            name = prompt("Enter name: ")
+            if(name === 'stop'){
+                break;
+            }else{
+                names.push(name);
+            }
+        }
+        let random = Math.random() * (names.length-1);
+        random = Math.floor(random);
+        alert(`${names[random]} is going to buy lunch today`)
+    }
+
+    function Task8() {
+        let number = prompt("Enter amount number in sequence: ")
+        fibonnaciGenerator(number)
+    }
+    function fibonnaciGenerator(n){
+        let n1 = 0;
+        let n2 = 1;
+        let next;
+        for(let i = 1; i <= n; i++){
+            console.log(n1);
+            next = n1 + n2;
+            n1 = n2;
+            n2 = next;
+        }
+    }
+    Task1();
+    Task4();
+    Task5();
+    Task6();
+    Task7()
+    Task8();
+
+</script>
+</body>
+</html>
